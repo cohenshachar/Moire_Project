@@ -1,0 +1,304 @@
+        .radio-container {
+            display: flex;
+            gap: 10px;
+        }
+        .width-input-container{
+            line-height: 1;
+        }
+        .min-max-label {
+            grid-column: 2 / 3;
+            position: relative;
+            display: flex;
+            padding:  0;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .form-container {
+            padding: 17px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            float: left;
+            width: calc(100% - 40px);
+            line-height: 1.4;
+            margin-bottom:  10px;
+            margin-left: 5px;
+        }
+
+        .ring-param:hover {
+            background-color: #BBBBBB;
+        }
+
+        h1,h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            letter-spacing: 0.2em;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 5px;
+            height: 30px;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .inline-container {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            position: relative;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .inline-container input[type="range"] {
+            margin-top: 20px;
+            grid-column: 2 / 3;
+        }
+        .toggle-view {
+            margin-top: 5px;
+            padding: 8px 10px;
+            background-color: #f4f4f4;
+            color: #BBB;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.15);
+        }
+
+        .toggle-view:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            gap: 40px;
+            margin: 20px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+            height:85vh;
+            overflow-y: auto;
+            direction: rtl;
+        }
+
+        .tab-content > * {
+            direction: ltr;
+        }
+        .tabs-container {
+            max-width: 600px;
+            min-width: 360px;
+            position: relative;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        /* Center the title */
+        .tabs-container h1 {
+            font-size: 24px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        .tabs-container h2 {
+            font-size: 20px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        /* Style for the tabs */
+        ul.tabs {
+            height: 100%;
+            list-style-type: none;
+            padding-left: 0;
+            display: flex;
+            justify-content: left; /* Centers the tabs horizontally */
+        }
+
+        ul.tabs li {
+            margin-right: 10px; /* Space between tabs */
+        }
+
+        ul.tabs li button {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            display: block;
+            position: relative;
+            text-decoration: none; /* Removes underline on hover */
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            border: none;
+            cursor: pointer;
+        }
+
+        ul.tabs li button:hover {
+            background-color: #ddd; /* Changes color on hover */
+            text-decoration: none; /* Removes underline on hover */
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            width: 100vh;
+            height: 100vh; /* Adjust as needed */
+            position: relative;
+        }
+
+        .svg-container svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none; /* Hide all SVGs by default */
+        }
+
+        .svg-container svg.active {
+            display: block; /* Display the active SVG */
+        }
+        #input_svg {
+            z-index: -2; /* Lower layer */
+        }
+        #base_svg {
+            z-index: -3; /* Lower layer */
+        }
+        #revealer_svg {
+            z-index: -2; /* Lower layer */
+        }
+        #dimensions_svg {
+            z-index: -1; /* Upper layer */
+        }
+        .divider {
+            border-left: 3px solid #ff6d77; /* Creates a vertical line */
+            margin: 5px 0 5px 0; /* Optional spacing around the divider */
+        }
+        :root {
+            --rotation-deg:-360deg;
+            --animation-dur: calc(12*12*60s);
+        }
+        .rotate {
+            transform-origin: center;
+            transform-box: fill-box;
+            animation: rotateGroup var(--animation-dur) linear infinite;
+        }
+
+        @keyframes rotateGroup {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(var(--rotation-deg));
+            }
+        }
+        .tabs .save-button{
+            background: #ff6d77;
+            color:#e1ff35;
+            width: 100%;
+        }
+        .tabs .save-button:hover{
+            background: #ff3377;
+        }
+        .demo-controler {
+            font-size: 14px;
+            z-index: 10;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 10px;
+
+        }
+
+        .demo-controler .form-container {
+            width: auto;
+            height: auto;
+            padding: 12px 8px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .demo-controler label{
+            margin: 0;
+        }
+        .demo-controler ul.tabs li {
+            margin-right: 0px;
+            margin-left: 10px;/* Space between tabs */
+        }
+        .demo-controler .form-container ul {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-end;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            width: 100%;
+            gap: 8px; /* Add gap between buttons */
+        }
+
+        .demo-controler .form-container button {
+            width: 100%; /* Make buttons uniform in size */
+            padding: 8px 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*transition: background-color 0.3s, transform 0.1s;*/
+        }
+        .verticalize{
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+        .verticalize input[type="range"]
+         {
+            height: 300px; /* Adjust as needed */
+            margin: 0;
+        }
+
+        .demo-controler .form-container button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .demo-controler .form-container button:active {
+            transform: scale(0.95);
+        }

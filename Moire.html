@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Configuration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="demo-controler">
+        <ul class="tabs svg-selectors">
+            <li><button id="dimension_button" type="button" data-target="#dimensions_svg">Dimensions (Viewed)</button></li>
+            <li class="divider"></li>
+            <li><button type="button" data-target="#input_svg">Input Image</button></li>
+            <li><button type="button" data-target="#revealer_svg">Revealer</button></li>
+            <li><button type="button" data-target="#base_svg">Base</button></li>
+            <li><button type="button" data-target="#demo_svg">Demo</button></li>
+        </ul>
+        <div class="form-container">
+            <ul>
+                <li><button type="button"  id="stop"><i class="fas fa-stop"></i> </button></li>
+                <li><button type="button"  id="play"><i class="fas fa-play"></i> </button></li>
+                <li><button type="button"  id="change-direction"><i class="fas fa-exchange-alt"></i></button></li>
+            </ul>
+            <div class="verticalize">
+                <label for="range">Demo Speed: </label>
+                <div class="inline-container">
+                    <input type="range" id="range" min="1" max="10000" step="1" value="1">
+                    <div class="min-max-label">
+                        <span>x1</span>
+                        <span>x10000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="child tabs-container">
+            <form id="mainForm">
+                <h1>Ring Configuration And Settings</h1>
+                <ul class="tabs">
+                    <li><button type="button" data-target="#tab1">File Settings</button></li>
+                    <li><button type="button" data-target="#tab2">Clock Adjustments</button></li>
+<!--                    <li><button type="button" data-target="#tab3">Demo Settings</button></li>-->
+                    <li><button type="button" data-target="" class="save-button">Save</button></li>
+                </ul>
+                <div id="tab1" class="tab-content">
+                    <div class="form-container">
+                        <label for="fileInput">Input File:</label>
+                        <input type="file" id="fileInput"><br>
+
+                        <!-- Number inputs with toggle buttons -->
+                        <label for="inner_diameter">Inner Diameter:</label>
+                        <div class="input-container">
+                            <input type="number" id="inner_diameter" name="inner_diameter" step="5" data-target="red">
+                            <button type="button" class="toggle-view">View</button>
+                        </div>
+
+                        <label for="inner_hour_diameter">Inner Hour Bound:</label>
+                        <div class="input-container">
+                            <input type="number" id="inner_hour_diameter" name="inner_hour_diameter" step="5" data-target="orange">
+                            <button type="button" class="toggle-view">View</button>
+                        </div>
+
+                        <label for="outer_hour_diameter">Outer Hour Bound:</label>
+                        <div class="input-container">
+                            <input type="number" id="outer_hour_diameter" name="outer_hour_diameter" step="5" data-target="orange">
+                            <button type="button" class="toggle-view">View</button>
+                        </div>
+
+                        <label for="middle_diameter">Minute-Hour-Split Diameter:</label>
+                        <div class="input-container">
+                            <input type="number" id="middle_diameter" name="middle_diameter" step="5" data-target="blue">
+                            <button type="button" class="toggle-view">View</button>
+                        </div>
+
+                        <label for="white_outer_diameter">Minute-Outer-Split Diameter:</label>
+                        <div class="input-container">
+                            <input type="number" id="white_outer_diameter" name="white_outer_diameter" step="5" data-target="green">
+                            <button type="button" class="toggle-view">View</button>
+                        </div>
+
+                        <label for="outer_diameter">Outer Diameter:</label>
+                        <div class="input-container">
+                            <input type="number" id="outer_diameter" name="outer_diameter" step="5" data-target="red">
+                            <button type="button" class="toggle-view">View</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab-content">
+                    <div class="form-container">
+                            <label for="speed">Speed Ratio:</label>
+                            <input type="number" id="speed" name="speed_ratio" step="1"><br>
+                            <label> Select the number of hour rings:</label>
+                            <div class="radio-container">
+                                <input type="radio" id="hour_ring_1" name="hour_rings" value="1">
+                                <label for="hour_ring_1">1</label>
+                                <input type="radio" id="hour_ring_2" name="hour_rings" value="2">
+                                <label for="hour_ring_2">2</label>
+                                <input type="radio" id="hour_ring_3" name="hour_rings" value="3">
+                                <label for="hour_ring_3">3</label>
+                                <input type="radio" id="hour_ring_4" name="hour_rings" value="4">
+                                <label for="hour_ring_4">4</label>
+                                <input type="radio" id="hour_ring_5" name="hour_rings" value="5">
+                                <label for="hour_ring_5">5</label>
+                                <input type="radio" id="hour_ring_6" name="hour_rings" value="6">
+                                <label for="hour_ring_6">6</label>
+                        </div>
+                    </div>
+                    <div class="form-container ring-param"  data-target="outer" id="outer_ring">
+                        <h2>Outer Ring</h2>
+                        <div class="width-input-container">
+                            <div class="inline-container">
+                                <label for="base_width">Base Width:</label>
+                                <input type="range" name="outer_base_width" min="0.1" max="1.9" step="0.01">
+                                <div class="min-max-label">
+                                    <span>0.1</span>
+                                    <span>1.9</span>
+                                </div>
+                            </div>
+                            <div class="inline-container">
+                                <label>Revealer Width:</label>
+                                <input type="range" name="outer_rev_width" min="0.1" max="1.9" step="0.01">
+                                   <div class="min-max-label">
+                                    <span>0.1</span>
+                                    <span>1.9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="outer_ring_angle">Outer Ring Angle:</label>
+                        <input type="range" id="outer_ring_angle" name="outer_ring_angle" min="-87" max="87" step="1">
+                        <div class="min-max-label">
+                            <span>-87</span>
+                            <span>87</span>
+                        </div>
+                    </div>
+                    <div class="form-container ring-param"  data-target="minute" id="minute_ring">
+                        <h2>Minute Ring</h2>
+                        <div class="width-input-container">
+                            <div class="inline-container">
+                                <label for="base_width">Base Width:</label>
+                                <input type="range" id="base_width" name="minute_base_width" min="0.1" max="1.9" step="0.01">
+                                <div class="min-max-label">
+                                    <span>0.1</span>
+                                    <span>1.9</span>
+                                </div>
+                            </div>
+                            <div class="inline-container">
+                                <label for="revealer_width">Revealer Width:</label>
+                                <input type="range" id="revealer_width" name="minute_rev_width" min="0.1" max="1.9" step="0.01">
+                                   <div class="min-max-label">
+                                    <span>0.1</span>
+                                    <span>1.9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="minute_ring_angle">Minute Ring Angle:</label>
+                        <input type="range" id="minute_ring_angle" name="minute_ring_angle" min="-87" max="87" step="1">
+                        <div class="min-max-label">
+                            <span>-87</span>
+                            <span>87</span>
+                        </div>
+                    </div>
+                    <div id="hour-ring-container"></div>
+                </div>
+            </form>
+        </div>
+        <div class="child svg-container" id="svg_container">
+            <svg id="input_svg" class="active" viewBox="0 0 400 400"  xmlns="http://www.w3.org/2000/svg" >
+                    <defs>
+                        <path id="arcPathSmall" d="M 200,200 A 50,50 0 1,1 300,200 A 50,50 0 1,1 200,200" fill="none" />
+                        <path id="arcPathBig" d="M 150,200 A 100,100 0 1,1 350,200 A 100,100 0 1,1 150,200" fill="none" />
+                    </defs>
+                <rect x = 30% y = 10% width="70%" height="80%" fill="#e0e0e0"/>
+                <rect y = 10%  width="30%" height="80%" fill="#3344ff"/>
+                <text fill="#333" font-size="18" font-family="Arial">
+                    <textPath href="#arcPathSmall" startOffset="50%" text-anchor="middle">
+                        Input Image Placeholder  Input Image Placeholder
+                    </textPath>
+                </text>
+                <text fill="#333" font-size="20" font-family="Arial">
+                    <textPath href="#arcPathBig" startOffset="50%" text-anchor="middle">
+                        Input Image Placeholder  Input Image Placeholder  Input Image Placeholder
+                    </textPath>
+                </text>
+            </svg>
+            <svg id="revealer_svg" viewBox="0 0 400 400">
+                    <defs>
+                        <path id="arcPathSmall" d="M 200,200 A 50,50 0 1,1 300,200 A 50,50 0 1,1 200,200" fill="none" />
+                        <path id="arcPathBig" d="M 150,200 A 100,100 0 1,1 350,200 A 100,100 0 1,1 150,200" fill="none" />
+                    </defs>
+                <rect x = 30% y = 10% width="70%" height="80%" fill="#e0e0e0"/>
+                <rect y = 10%  width="30%" height="80%" fill="#ff4433"/>
+                <text fill="#333" font-size="16" font-family="Arial">
+                    <textPath href="#arcPathSmall" startOffset="50%" text-anchor="middle">
+                        Revealer Placeholder  Revealer Placeholder
+                    </textPath>
+                </text>
+                <text fill="#333" font-size="22" font-family="Arial">
+                    <textPath href="#arcPathBig" startOffset="50%" text-anchor="middle">
+                        Revealer Placeholder  Revealer Placeholder  Revealer Placeholder
+                    </textPath>
+                </text>
+            </svg>
+            <svg id="base_svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" clip-path="url(#complexClip)">
+                <defs>
+                    <clipPath id="complexClip" clipPathUnits="objectBoundingBox" ><path d="m 0,0 l 1,0 l 0,1 l -1,0 l 0,-1" fill = 'black'/></clipPath>
+                    <g id="intrinsicDimensions" data-width="1000" data-height="1000"></g>
+                    <path id="arcPathSmall" d="M 200,200 A 50,50 0 1,1 300,200 A 50,50 0 1,1 200,200" fill="none" />
+                    <path id="arcPathBig" d="M 150,200 A 100,100 0 1,1 350,200 A 100,100 0 1,1 150,200" fill="none" />
+                </defs>
+                <rect x = 30% y = 10% width="70%" height="80%" fill="#e0e0e0"/>
+                <rect y = 10%  width="30%" height="80%" fill="#33ff44"/>
+                <text fill="#333" font-size="19.5" font-family="Arial">
+                    <textPath href="#arcPathSmall" startOffset="50%" text-anchor="middle">
+                        Base Placeholder  Base Placeholder
+                    </textPath>
+                </text>
+                <text fill="#333" font-size="27" font-family="Arial">
+                    <textPath href="#arcPathBig" startOffset="50%" text-anchor="middle">
+                        Base Placeholder  Base Placeholder  Base Placeholder
+                    </textPath>
+                </text>
+            </svg>
+            <svg id="dimensions_svg" class="active" viewBox="0 0 200 200"  xmlns="http://www.w3.org/2000/svg" ></svg>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
